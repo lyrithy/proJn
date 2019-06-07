@@ -1,4 +1,4 @@
-require("./models/db");
+//require("./models/db");
 const express = require('express');
 const app = express();
 

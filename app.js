@@ -23,7 +23,7 @@ var commentItemRoutes    = require("./routes/comments_item"),
     ProfileRoutes = require("./routes/profile"),
     indexRoutes      = require("./routes/index");
     
-mongoose.connect("mongodb://localhost/JNJ");
+//mongoose.connect("mongodb://localhost/JNJ");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");

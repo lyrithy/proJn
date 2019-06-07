@@ -68,7 +68,7 @@ app.use("/profile", ProfileRoutes);AdminRoutes
 app.use("/Items/:id/comments", commentItemRoutes);
 app.use("/Services/:id/comments", commentServiceRoutes);
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, function(){
    console.log("The JNJ Server is running on port 1111!");
 });
 

@@ -7,7 +7,7 @@ const connect = () => {
 require("./locationCollection");
 
 
-// const locations = mongoose.model('locations');
+              // const locations = mongoose.model('locations');
 
 connect()
     .then(async connection =>{

@@ -1,0 +1,31 @@
+ <h3>{{viewTitle}}</h3>
+
+<form action="/locations" method="POST" autocomplete="off">
+ <div class="form-group">
+  <label for="sel1">Select Contry:</label>
+  <select class="form-control" name="country">
+    <option>Italy</option>
+    <option>Frace</option>
+    <option>Czech Republic</option>
+    <option>Sweeden</option>
+  </select>
+</div>
+  
+<div class="form-group">
+  <label for="sel1">Select City:</label>
+  <select class="form-control" name="city">
+    <option>Prague</option>
+    <option>Brno</option>
+    <option>Paris</option>
+    <option>Lurence</option>
+  </select>
+</div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Budget </label>
+    <input type="text" class="form-control" name="price" placeholder="Enter budget">
+    <small id="budgetHelp" class="form-text text-muted">We'll search most attractive place by your budget.</small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 

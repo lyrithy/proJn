@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
@@ -19,15 +18,15 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine','hbs');
 
+//todo: assign controller variable:
+var locationController = require('./controllers/locationController');
 
-const locationController = require('./controllers/locationController');
 
-app.set('port',process.env.PORT || 8090);
-
+app.set('port',process.env.PORT || 8050);
 app.listen(app.get('port'), function () {
     console.log("server start on port : " + app.get('port'));
 });
 
 
 //todo: add controller
-app.use('/locations', locationController);
+app.use('/', locationController);

@@ -16,38 +16,9 @@ var config = {
 //todo: homepage for searching place:
 router.get('/', (req,res) =>{
     console.log("get running...");
-    // var leadsRef = firebase.database().ref('locations');
-    // var country=[];
-    // var city=[];
-    
-    // leadsRef.on('value', function(snapshot) {
-    //     snapshot.forEach(function(childSnapshot) {
-    //       var childData = childSnapshot.val();
-    //       var tmpCountry = "";
-    //       var tmpCity = "";
-    //       if (tmpCountry.toString().trim() != childData.country.toString().trim()){
-    //         country.push({country:childData.country});
-    //         tmpCountry = childData.country;
-    //         console.log(tmpCountry.toString());
-    //         console.log("-------------------");
-    //         console.log(childData.country.toString());
-    //       }
-    //       if (tmpCity != childData.city){            
-    //         tmpCity = childData.city;
-    //         city.push({city:childData.city});
-    //       }                    
-    //     });
-        
-    // });
-
-
-    
-
     res.render('location/search',
     {
         viewTitle: "Search attractive places"
-        // ,country:country
-        // ,city:city
     });
 })
 

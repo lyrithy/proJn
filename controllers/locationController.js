@@ -16,38 +16,33 @@ var config = {
 //todo: homepage for searching place:
 router.get('/', (req,res) =>{
     console.log("get running...");
-    // var leadsRef = firebase.database().ref('locations');
-    // var country=[];
-    // var city=[];
-    
-    // leadsRef.on('value', function(snapshot) {
-    //     snapshot.forEach(function(childSnapshot) {
-    //       var childData = childSnapshot.val();
-    //       var tmpCountry = "";
-    //       var tmpCity = "";
-    //       if (tmpCountry.toString().trim() != childData.country.toString().trim()){
-    //         country.push({country:childData.country});
-    //         tmpCountry = childData.country;
-    //         console.log(tmpCountry.toString());
-    //         console.log("-------------------");
-    //         console.log(childData.country.toString());
-    //       }
-    //       if (tmpCity != childData.city){            
-    //         tmpCity = childData.city;
-    //         city.push({city:childData.city});
-    //       }                    
-    //     });
-        
-    // });
-
-
-    
-
-    res.render('location/search',
+    res.render('location/index',
     {
         viewTitle: "Search attractive places"
-        // ,country:country
-        // ,city:city
+    });
+})
+
+//todo: homepage for searching place:
+router.get('/contact', (req,res) =>{
+    console.log("get running...");
+    res.render('location/contact',
+    {
+        viewTitle: "Search attractive places"
+    });
+})
+
+router.get('/about', (req,res) =>{
+    console.log("get running...");
+    res.render('location/about',
+    {
+        viewTitle: "Search attractive places"
+    });
+})
+router.get('/news', (req,res) =>{
+    console.log("get running...");
+    res.render('location/news',
+    {
+        viewTitle: "Search attractive places"
     });
 })
 
@@ -67,7 +62,7 @@ router.post('/locations', (req,res) =>{
             for(var val in childData.place){
                 if ((childData.place[val].price <= req.body.price || req.body.price == "") && childData.place[val].category == req.body.category){
                     console.log(childData.place[val].title);
-                    var tmp={city:req.body.city, title:childData.place[val].title
+                    var tmp={city:req.body.city, country:childData.country,  title:childData.place[val].title, image:childData.place[val].images
                             , category:childData.place[val].category, price:childData.place[val].price
                             , viewTitle:childData.place[val].summary}
                     list.push(tmp); 
@@ -77,9 +72,9 @@ router.post('/locations', (req,res) =>{
           
           console.log(list);
         });
-        
+        res.render("location/destinations",{list:list})
     });
-    res.render("location/list",{list:list})
+    
 })
 
 

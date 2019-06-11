@@ -1,6 +1,15 @@
  <h3>{{viewTitle}}</h3>
 
-<form action="/" method="POST" autocomplete="off">
+<form action="/locations" method="POST" autocomplete="off">
+ <div class="form-group">
+  <label for="sel1">Select Contry:</label>
+  <select class="form-control" name="country">
+    <option>Italy</option>
+    <option>Frace</option>
+    <option>Czech Republic</option>
+    <option>Sweeden</option>
+  </select>
+</div>
   
 <div class="form-group">
   <label for="sel1">Select City:</label>
@@ -11,15 +20,6 @@
     <option>Lurence</option>
   </select>
 </div>
- <div class="form-group">
-  <label for="sel1">Select Category:</label>
-  <select class="form-control" name="category">
-    <option>Art</option>
-    <option>Sport</option>
-    <option>Foods</option>
-    <option>Zoos</option>
-  </select>
-</div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Budget </label>
@@ -28,8 +28,4 @@
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
-  <a href="test.html">detail</a>
-  <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-  <a href="/{{this._id}}">testing</i></a>
-
 </form> 

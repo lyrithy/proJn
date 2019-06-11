@@ -22,7 +22,7 @@ app.set('view engine','hbs');
 var locationController = require('./controllers/locationController');
 
 
-app.set('port',process.env.PORT || 8050);
+app.set('port',process.env.PORT || 8070);
 app.listen(app.get('port'), function () {
     console.log("server start on port : " + app.get('port'));
 });

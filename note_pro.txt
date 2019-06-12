@@ -1,0 +1,13 @@
+Project Folder:
+D:\Projects\travelnode
+command:
+-- npm init
+
+install package:
+
+npm i --s express@4.16.4
+npm i --s mongoose@5.3.4
+npm i --s express-handlebars@3.0.0
+npm i --s body-parser@1.19.0
+
+

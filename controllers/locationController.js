@@ -50,28 +50,31 @@ router.get('/news', (req,res) =>{
 router.post('/locations', (req,res) =>{
     console.log("post running...");
     var leadsRef = firebase.database().ref('locations');
+    console.log("data taken");
     var list=[];
     leadsRef.on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
           var childData = childSnapshot.val();
+          console.log(req.body.city);
           if (req.body.city == childData.city)
           {
 
-
-            console.log(childData.place);
+            
+            //console.log(childData.place);
             for(var val in childData.place){
                 if ((childData.place[val].price <= req.body.price || req.body.price == "") && childData.place[val].category == req.body.category){
-                    console.log(childData.place[val].title);
+                   // console.log(childData.place[val].title);
                     var tmp={city:req.body.city, country:childData.country,  title:childData.place[val].title, image:childData.place[val].images
-                            , category:childData.place[val].category, price:childData.place[val].price
-                            , viewTitle:childData.place[val].summary}
+                            , category:childData.place[val].category, price:childData.place[val].price, open:childData.place[val].open, hours:childData.place[val].hour
+                            , summary:childData.place[val].summary, address:childData.place[val].address, email:childData.place[val].email, phone:childData.place[val].phone}
                     list.push(tmp); 
                 }                
             }            
           }
           
-          console.log(list);
+          //console.log(list);
         });
+        console.log("list should be there");
         res.render("location/destinations",{list:list})
     });
     
